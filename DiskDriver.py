@@ -1,5 +1,5 @@
 total_space = float(input("Enter total space in GB: "))
-used_space =  float(input("Enetr remaining space in GB: "))
+used_space =  float(input("Enter remaining space in GB: "))
 
 #Percentage of disk space used
 percentage_used = (used_space / total_space) * 100

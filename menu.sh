@@ -3,7 +3,7 @@
 while true; do
 	clear
 
-echo "1) Run Snapshot Tool -> output: logs/"
+echo "1) Run Snapshot Tool -> output: reports/"
 echo "2) Run Audit Tool -> output: reports/"
 echo "3) Run Disk Space Checker Tool -> terminal"
 echo "4) Run Network Tool -> reports/"
