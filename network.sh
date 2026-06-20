@@ -1,26 +1,35 @@
 #!/bin/bash
 
+# makes reports folder
 mkdir -p reports
-file_path='reports/network.log'
+# file path
+file_path="reports/network.log"
 
-#This is collect IP address and active Interface
+# saves network info block
 {
-echo "Your ip adress is:"   
-ip -br addr show  
-echo ""  
+    # prints ip header
+    echo "Your IP address is:"
+    # gets ip address
+    ip -br addr show
+    echo ""
 
-#This grabs the DNS server info
-echo "DNS servers are:"  
-grep "nameserver" /etc/resolv.conf  
-echo ""  
+    # prints dns header
+    echo "DNS servers are:"
+    # gets dns servers
+    grep "nameserver" /etc/resolv.conf
+    echo ""
 
-#Ping test for connectivity
-echo "Ping Test:"  
-if ping -c 3 google.com   2>&1; then
-	echo "Status: Internet Connected!"  
-else 
-	echo "Status: Internet Disconnected!"  
-fi
+    # prints ping header
+    echo "Ping Test:"
+    # pings google to check internet
+    if ping -c 3 google.com 2>&1; then
+        # prints connected status
+        echo "Status: Internet Connected!"
+    else
+        # prints disconnected status
+        echo "Status: Internet Disconnected!"
+    fi
 } > "$file_path"
 
+# prints success message
 echo "Network report saved to $file_path"
